@@ -18,7 +18,4 @@ yarn-error.log
 /.idea
 /.vscode
 Pass.txt
-.gitignore
-.gitattributes
-.env.example
 
