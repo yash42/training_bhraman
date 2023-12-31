@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\HomeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Backend\HeaderController;
+use App\Http\Controllers\Backend\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//For header
+Route::get('/home/header/index', [HeaderController::class, 'index'])->name('header.index');
+Route::get('/home/header/create', [HeaderController::class, 'create'])->name('header.create');
+Route::post('/home/header/store', [HeaderController::class, 'store'])->name('header.store');
+
+//For Employee
+Route::get('/home/employee/index', [EmployeeController::class, 'index'])->name('employee.index');
+Route::get('/home/employee/create-new', [EmployeeController::class, 'create'])->name('employee.create');
+Route::post('/home/employee/store', [EmployeeController::class, 'store'])->name('employee.store');
